@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Schattingsbureau Vlaanderen | Professionele Vastgoedschattingen</title>
+<meta name="description" content="Schattingsbureau Vlaanderen biedt betrouwbare schattingen van onroerend goed in heel Vlaanderen. Correcte waardebepaling met een persoonlijke aanpak.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Lato:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1b3b5f;
+    --navy-dark:#132c47;
+    --gold:#b08d57;
+    --bg:#faf9f7;
+    --text:#2e2e2e;
+    --muted:#5c6b7a;
+    --card:#ffffff;
+    --border:#e7e2da;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    font-family:'Lato', sans-serif;
+    color:var(--text);
+    background:var(--bg);
+    line-height:1.7;
+  }
+  h1,h2,h3{
+    font-family:'Playfair Display', serif;
+    color:var(--navy);
+  }
+  a{color:var(--gold); text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  .container{max-width:1100px; margin:0 auto; padding:0 24px;}
+
+  header{
+    background:var(--navy);
+    padding:18px 0;
+    position:sticky; top:0; z-index:100;
+    box-shadow:0 2px 10px rgba(0,0,0,0.15);
+  }
+  header .container{display:flex; justify-content:space-between; align-items:center;}
+  .logo{color:#fff; font-family:'Playfair Display', serif; font-size:1.3rem; font-weight:700; letter-spacing:0.3px;}
+  nav ul{list-style:none; display:flex; gap:28px;}
+  nav a{color:#e8e6e1; font-size:0.95rem; font-weight:500;}
+  nav a:hover{color:var(--gold); text-decoration:none;}
+
+  .hero{
+    background:linear-gradient(rgba(19,44,71,0.82),rgba(19,44,71,0.88)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?q=80&w=1600') center/cover no-repeat;
+    color:#fff;
+    padding:110px 0 90px;
+    text-align:center;
+  }
+  .hero h1{color:#fff; font-size:2.6rem; margin-bottom:18px;}
+  .hero p{font-size:1.15rem; max-width:640px; margin:0 auto 30px; color:#d9dde3;}
+  .btn{
+    display:inline-block;
+    background:var(--gold);
+    color:#fff;
+    padding:14px 34px;
+    border-radius:3px;
+    font-weight:700;
+    letter-spacing:0.4px;
+  }
+  .btn:hover{background:#9a7847; text-decoration:none;}
+
+  section{padding:80px 0;}
+  .section-title{text-align:center; margin-bottom:48px;}
+  .section-title h2{font-size:2rem;}
+  .section-title .divider{width:60px; height:3px; background:var(--gold); margin:14px auto 0;}
+
+  .about p{max-width:820px; margin:0 auto 18px; text-align:center; color:var(--muted); font-size:1.05rem;}
+  .about strong{color:var(--navy);}
+
+  .services{background:#f2efe9;}
+  .service-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:28px; margin-top:20px;}
+  .service-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-top:3px solid var(--gold);
+    padding:32px 26px;
+    border-radius:4px;
+  }
+  .service-card h3{font-size:1.15rem; margin-bottom:12px;}
+  .service-card p{color:var(--muted); font-size:0.97rem;}
+
+  .why ul{max-width:760px; margin:0 auto; list-style:none;}
+  .why li{
+    padding:16px 0 16px 34px;
+    border-bottom:1px solid var(--border);
+    position:relative;
+    color:var(--muted);
+  }
+  .why li:last-child{border-bottom:none;}
+  .why li::before{
+    content:"✓";
+    position:absolute; left:0; top:16px;
+    color:var(--gold); font-weight:700;
+  }
+  .why strong{color:var(--navy);}
+
+  .contact-single{max-width:700px; margin:0 auto; text-align:center;}
+  .contact-single p{color:var(--muted); margin-bottom:10px;}
+  .contact-single h3{margin-bottom:16px;}
+
+  footer{
+    background:var(--navy-dark);
+    color:#c9d1da;
+    padding:60px 0 30px;
+  }
+  .footer-grid{display:grid; grid-template-columns:1fr 1fr; gap:40px; margin-bottom:40px;}
+  footer h4{color:#fff; font-family:'Playfair Display', serif; margin-bottom:16px; font-size:1.1rem;}
+  footer p{margin-bottom:8px; font-size:0.95rem;}
+  footer a{color:#d9c39b;}
+  .footer-links{list-style:none;}
+  .footer-links li{margin-bottom:10px; font-size:0.95rem;}
+  .footer-links a{color:#d9c39b; font-weight:600;}
+  .maps-stack{width:100%; margin-bottom:40px;}
+  .maps-stack iframe{width:100%; height:420px; border:0; display:block; margin-bottom:20px;}
+  .maps-stack iframe:last-child{margin-bottom:0;}
+  .copyright{
+    text-align:center;
+    border-top:1px solid #2c4josh;
+    border-top:1px solid rgba(255,255,255,0.1);
+    padding-top:24px;
+    font-size:0.85rem;
+    color:#93a1af;
+  }
+
+  @media(max-width:768px){
+    nav ul{display:none;}
+    .footer-grid{grid-template-columns:1fr;}
+    .maps-stack iframe{height:300px;}
+    .hero h1{font-size:2rem;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="logo">Schattingsbureau Vlaanderen</div>
+    <nav>
+      <ul>
+        <li><a href="#over-ons">Over Ons</a></li>
+        <li><a href="#diensten">Diensten</a></li>
+        <li><a href="#waarom-wij">Waarom Wij</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="container">
+    <h1>Vastgoed Correct Laten Waarderen, Van A Tot Z</h1>
+    <p>Onafhankelijke en onderbouwde schattingen van onroerend goed, uitgevoerd door specialisten die de vastgoedmarkt in Vlaanderen door en door kennen.</p>
+    <a href="#contact" class="btn">Vraag Een Schatting Aan</a>
+  </div>
+</section>
+
+<section class="about" id="over-ons">
+  <div class="container">
+    <div class="section-title">
+      <h2>Over Ons</h2>
+      <div class="divider"></div>
+    </div>
+    <p>Een woning, grond of bedrijfspand correct laten waarderen vraagt om meer dan een snelle inschatting. Het vergt marktkennis, lokale ervaring en een objectieve blik. Precies daarom bestaat <strong><a href="https://www.schattingsbureau.vlaanderen/" target="_blank" rel="noopener">Schattingsbureau Vlaanderen</a></strong>: een team dat eigenaars, kopers, notarissen en banken doorheen heel Vlaanderen begeleidt met heldere, goed onderbouwde waardebepalingen.</p>
+    <p>Elke opdracht wordt met dezelfde zorg behandeld, of het nu gaat om een schatting voor de verkoop van een woning, een waardebepaling in het kader van een erfenis, of een bankschatting voor een hypotheek. Betrouwbaarheid, correctheid en een transparante communicatie vormen daarbij steeds het uitgangspunt.</p>
+  </div>
+</section>
+
+<section class="services" id="diensten">
+  <div class="container">
+    <div class="section-title">
+      <h2>Onze Diensten</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="service-grid">
+      <div class="service-card">
+        <h3>Schatting Vastgoed</h3>
+        <p>Een grondige schatting vastgoed op basis van ligging, staat van het pand en actuele marktgegevens, geschikt voor verkoop, aankoop of verzekeringsdoeleinden.</p>
+      </div>
+      <div class="service-card">
+        <h3>Waardering Onroerend Goed</h3>
+        <p>Een gedetailleerde waardering onroerend goed voor particulieren en professionals, met een duidelijk en verdedigbaar waarderapport.</p>
+      </div>
+      <div class="service-card">
+        <h3>Schatting Onroerend Goed</h3>
+        <p>Objectieve schatting onroerend goed bij erfenis, echtscheiding of vermogensplanning, uitgevoerd met de nodige discretie en nauwkeurigheid.</p>
+      </div>
+      <div class="service-card">
+        <h3>Bankschatting</h3>
+        <p>Een erkende bankschatting voor kredietaanvragen en hypotheken, opgesteld volgens de vereisten van de financiële instellingen.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="waarom-wij">
+  <div class="container">
+    <div class="section-title">
+      <h2>Waarom Kiezen Voor Schattingsbureau Vlaanderen</h2>
+      <div class="divider"></div>
+    </div>
+    <ul>
+      <li><strong>Diepgaande marktkennis</strong> — jarenlange ervaring met de vastgoedmarkt in heel Vlaanderen.</li>
+      <li><strong>Persoonlijke aanpak</strong> — elke opdracht wordt op maat van de klant behandeld.</li>
+      <li><strong>Transparante communicatie</strong> — duidelijke uitleg bij elke stap van de waardebepaling.</li>
+      <li><strong>Correctheid en betrouwbaarheid</strong> — schattingen die overeind blijven bij notaris, bank of rechtbank.</li>
+      <li><strong>Flexibele bereikbaarheid</strong> — ook op zaterdag, op afspraak.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-title">
+      <h2>Contacteer Ons</h2>
+      <div class="divider"></div>
+    </div>
+    <div class="contact-single">
+      <h3>Vraag Vrijblijvend Een Schatting Aan</h3>
+      <p>Onze deur staat open voor al uw vragen over vastgoedwaardering in Vlaanderen. Neem telefonisch, per mail of via onze Google-bedrijfspagina contact met ons op.</p>
+      <p>Bekijk ook de reviews en openingsuren van <a href="https://maps.app.goo.gl/cJ9Ba7ZRGVocGJjM7" target="_blank" rel="noopener">Schattingsbureau Vlaanderen</a> op Google.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h4>Schattingsbureau Vlaanderen</h4>
+        <p>Kerkomsesteenweg 278, 3370 Boutersem, België</p>
+        <p>Tel: +32 473 259 859</p>
+        <p>Email: info@schattingsbureau.vlaanderen</p>
+        <p>Ma - Vr: 09:00 - 19:00 | Za: op afspraak | Zo: gesloten</p>
+        <p><a href="https://www.schattingsbureau.vlaanderen/" target="_blank" rel="noopener">www.schattingsbureau.vlaanderen</a></p>
+      </div>
+      <div>
+        <h4>Onze Kanalen</h4>
+        <ul class="footer-links">
+          <li><a href="https://sites.google.com/view/schattingsbureauvlaanderen/home" target="_blank" rel="noopener">Onze Google Site</a></li>
+          <li><a href="https://sites.google.com/view/schattingsbureauvlaanderen/schatting-vastgoed" target="_blank" rel="noopener">Schatting vastgoed</a></li>
+          <li><a href="https://sites.google.com/view/schattingsbureauvlaanderen/waardering-onroerend-goed" target="_blank" rel="noopener">Waardering onroerend goed</a></li>
+          <li><a href="https://sites.google.com/view/schattingsbureauvlaanderen/schatting-onroerend-goed" target="_blank" rel="noopener">Schatting onroerend goed</a></li>
+          <li><a href="https://sites.google.com/view/schattingsbureauvlaanderen/bankschatting" target="_blank" rel="noopener">Bankschatting</a></li>
+          <li><a href="https://www.youtube.com/channel/UCHkesp14COVOj9jcrz3WLNw" target="_blank" rel="noopener">Onze videokanaal</a></li>
+        </ul>
+      </div>
+    </div>
+    <h4 style="margin-bottom:16px;">Vind Ons</h4>
+    <div class="maps-stack">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2518.829084249108!2d4.870519299999999!3d50.85284919999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c3dfaa506c1c8f%3A0x2ee97d08bfc50ce4!2sSchattingsbureau%20Vlaanderen!5e0!3m2!1sen!2s!4v1787037583020!5m2!1sen!2s" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      <iframe src="https://www.google.com/maps/d/embed?mid=14JuSG3O7A3Uv3H6QM7ZVVVYbXCiSFDQ&ehbc=2E312F" loading="lazy"></iframe>
+    </div>
+    <div class="copyright">
+      &copy; 2026 Schattingsbureau Vlaanderen. Alle rechten voorbehouden.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
